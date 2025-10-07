@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'movieapi/style.css' %}">
+</head>
+<body>
+    <h1>All Movies</h1>
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <strong>{{ movie.title }}</strong>
+                <span>Genre: {{ movie.genre }}</span>
+                <span>Year: {{ movie.year }}</span>
+                <span>Rating: {{ movie.rating }}</span>
+            </li>
+        {% empty %}
+            <li>No movies available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
